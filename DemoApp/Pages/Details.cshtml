@@ -1,0 +1,41 @@
+﻿@page
+@model DemoApp.Pages.DetailsModel
+@{
+}
+<div class="container">
+    <h3>Edit Task</h3>
+    <hr />
+    <br />
+    <form method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Id</label>
+                <input asp-for="Task.Id" class="form-control disabled" />
+                <span class="alert-danger" asp-validation-for="Task.Id"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Description</label>
+                <input asp-for="Task.Description" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Task.Description"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>CreationOn</label>
+                <input asp-for="Task.CreatedOn" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Task.CreatedOn"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Status</label>
+                <input asp-for="Task.Status" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Task.Status"></span>
+            </div>
+        </div>
+        <br />
+        <a class="btn btn-default" href="/Dashboard">Cancel</a>
+    </form>
+</div>

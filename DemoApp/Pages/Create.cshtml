@@ -1,0 +1,47 @@
+﻿@page
+@model DemoApp.Pages.CreateModel
+@{
+}
+<div class="container">
+    <h3>Add Task</h3>
+    <hr />
+    <br />
+    <form enctype="multipart/form-data" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <label>Description</label>
+                <input asp-for="Task.Description" class="form-control" />
+                <span class="alert-danger" asp-validation-for="Task.Description"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>Status</label>
+                <select asp-for="Task.Status" class="form-control">
+                    <option value="Not Started">Not Started</option>
+                    <option value="Started">Started</option>
+                    <option value="In-Progress">In-Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <span class="alert-danger" asp-validation-for="Task.Status"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>CreatedOn</label>
+                <input asp-for="Task.CreatedOn" class="form-control" asp-format="{0:yyyy-MM-ddTHH:mm}" />
+                <span class="alert-danger" asp-validation-for="Task.CreatedOn"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label>File</label>
+                <input asp-for="Task.File" class="form-control" type="file"/>
+                <span class="alert-danger" asp-validation-for="Task.File"></span>
+            </div>
+        </div>
+        <br />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a class="btn btn-default" href="/Dashboard">Cancel</a>
+    </form>
+</div>
